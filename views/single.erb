@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wtails</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/lemmon-slider.js"></script>
+    <script type="text/javascript" src="/js/tinycon.js"></script>
+    <script type="text/javascript" src="/js/wtails.js"></script>
+    <script type="text/javascript">
+      <% if wtailsrc %>
+      Wtails.onmessages.push(function(message, context) {
+        <%= wtailsrc %>
+      });
+      <% end %>
+      <% files.each do |file, port| %>
+      Wtails.run(<%= port %>);
+      <% end %>
+      $(function() {
+        $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});
+      });
+    </script>
+    <style>
+      .terminal-place {
+          width: 480px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="/dual">dual view</a>
+      </div>
+    </header>
+    <div class="main-view">
+      <div class="pane-full">
+        <%= erb :_pane, :locals => { :files => files, :terminal_width => 480 } %>
+      </div>
+    </div>
+  </body>
+</html>

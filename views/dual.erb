@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wtails</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="icon" href="/images/favicon.ico">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/lemmon-slider.js"></script>
+    <script type="text/javascript" src="/js/tinycon.js"></script>
+    <script type="text/javascript" src="/js/wtails.js"></script>
+    <script type="text/javascript">
+      <% if wtailsrc %>
+      Wtails.onmessages.push(function(message, context) {
+        <%= wtailsrc %>
+      });
+      <% end %>
+      <% files.each do |file, port| %>
+      Wtails.run(<%= port %>);
+      <% end %>
+      $(function() {
+        $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});
+      });
+    </script>
+    <style>
+      .terminal-place {
+          width: 240px;
+      }
+      .terminal {
+        transform: scale(0.5);
+        -moz-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="/single">single view</a>
+      </div>
+    </header>
+    <div class="main-view">
+      <% even, odd = (0...files.size).partition { |x| x%2 == 0 }.map { |s| s.map { |x| files[x] } } %>
+      <div class="pane-half">
+        <%= erb :_pane, :locals => { :files => even, :terminal_width => 240 } %>
+      </div>
+      <div class="pane-half">
+        <%= erb :_pane, :locals => { :files => odd, :terminal_width => 240 } %>
+      </div>
+    </div>
+  </body>
+</html>

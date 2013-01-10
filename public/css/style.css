@@ -1,0 +1,166 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #444;
+    margin: 0;
+    padding: 0 0 20px 0;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+header {
+    overflow: visible;
+    height: 0;
+}
+
+header div {
+    background: #888;
+    padding: 2px 8px 4px 8px;
+}
+
+header div a {
+    color: #eee;
+}
+
+.main-view {
+    height: 100%;
+    padding-top: 32px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.pane-full {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.pane-half {
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slider ul {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%; 
+}
+
+.slider li {
+    float: left;
+    list-style:none;
+    margin:0 16px 0 0;
+    height: 100%;
+}
+
+.terminal-title {
+    color: #ddd;
+    height: 0px;
+    overflow: visible;
+    text-align: center;
+}
+
+.terminal-place {
+    height: 100%;
+    padding-top: 18px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.terminal-frame {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+	border: 1px solid #EEE;
+    background: #111;
+    padding: 12px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.terminal {
+    color: #ddd;
+}
+
+.controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.floating-button {
+    position: absolute;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+}
+
+.floating-button > span {
+    width: 48px;
+    height: 48px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.prev-slide {
+    top: 45%;
+    left: -8px;
+}
+
+.next-slide {
+    top: 45%;
+    right: -8px;
+}
+
+.left-button {
+    width: 16px;
+    height: 24px;
+}
+
+.right-button {
+    width: 16px;
+    height: 24px;
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+    font-family: "Monaco", "Consolas", monospace;
+}
+

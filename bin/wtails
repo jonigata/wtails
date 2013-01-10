@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'trollop'
+
+opts = Trollop::options do
+  version "wtails 0.1 (c) 2012 Naoyuki Hirayama"
+  banner <<-EOS
+Wtails is a web server acts like 'tail -f'.
+
+Usage:
+    wtails [options] <filename>+
+
+EOS
+
+  opt :port, "Port number for http server", :default => 9999
+  opt :rc,  'Callback file location', :default => "~/.wtailrc"
+  opt :serve, "Just serve, don't open browser", :default => false
+end
+
+Trollop::die "need at least one filename" if ARGV.empty?
+
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "wtails"
+begin
+  Wtail.run(opts.to_hash, ARGV)
+rescue Errno::ENOENT => e
+  puts e
+end

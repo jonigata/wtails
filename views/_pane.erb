@@ -1,0 +1,33 @@
+        <div class="slider">
+          <ul>
+            <% files.each do |file, port| %>
+            <li>
+              <div class="terminal-title">
+                <%= file == '-' ? '&lt;STDIN&gt;' : file %>
+              </div>
+              <div class="terminal-place">
+                <div class="terminal-frame">
+                  <div class="terminal port-<%= port %>">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="controls">
+          <a class="prev-slide floating-button" href="#">
+            <span>
+              <svg class="left-button" viewBox="0 0 32 32" preserveAspectRatio="none">
+                <polygon points="32,0 0,16, 32,32" style="fill:#ccc"/>
+              </svg>
+            </span>
+          </a>
+          <a class="next-slide floating-button" href="#">
+            <span>
+              <svg class="right-button" viewBox="0 0 32 32" preserveAspectRatio="none">
+                <polygon points="0,0 32,16, 0,32" style="fill:#ccc"/>
+              </svg>
+            </span>
+          </a>
+        </div>
