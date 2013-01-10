@@ -14,7 +14,7 @@ Usage:
 EOS
 
   opt :port, "Port number for http server", :default => 9999
-  opt :rc,  'Callback file location', :default => "~/.wtailrc"
+  opt :rc,  'Callback file location', :default => "~/.wtailsrc"
   opt :serve, "Just serve, don't open browser", :default => false
 end
 
@@ -23,7 +23,7 @@ Trollop::die "need at least one filename" if ARGV.empty?
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "wtails"
 begin
-  Wtail.run(opts.to_hash, ARGV)
+  Wtails.run(opts.to_hash, ARGV)
 rescue Errno::ENOENT => e
   puts e
 end
