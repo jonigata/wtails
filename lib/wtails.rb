@@ -12,7 +12,7 @@ require "wtails/web_server"
 require "wtails/web_socket"
 require "wtails/tail"
 require "wtails/stdin"
-#require "wtails/browser"
+require "wtails/browser"
 
 module Wtails
   extend self
@@ -24,7 +24,7 @@ module Wtails
     EM.run do
       EM.defer { WebSocket.run(opts, files) }
       EM.defer { WebServer.run(opts, files) }
-      #EM.defer { Browser.run }
+      EM.defer { Browser.run }
       Tail.run(opts, files) 
     end
   end
