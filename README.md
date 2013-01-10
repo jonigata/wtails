@@ -17,5 +17,5 @@ usage
 screenshot
 ==========
 
-  ![single view](https://raw.github.com/jonigata/wtails/master/doc/img/dual_view.png)
+  ![single view](https://raw.github.com/jonigata/wtails/master/doc/img/single_view.png)
   ![dual view](https://raw.github.com/jonigata/wtails/master/doc/img/dual_view.png)
