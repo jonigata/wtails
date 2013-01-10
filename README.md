@@ -7,6 +7,11 @@ You can watch multiple files with slider UI.
 
 Wtails can serve files without launching browser(--serve), this option is usable for watching remote files.
 
+install
+=======
+
+  % gem install wtails
+
 usage
 =====
 
