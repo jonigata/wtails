@@ -17,5 +17,10 @@ usage
 screenshot
 ==========
 
+single view
+-----------
   ![single view](https://raw.github.com/jonigata/wtails/master/doc/img/single_view.png)
+
+dual (upper/lower) view
+-----------------------
   ![dual view](https://raw.github.com/jonigata/wtails/master/doc/img/dual_view.png)
