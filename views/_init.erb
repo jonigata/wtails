@@ -1,12 +1,12 @@
     <script type="text/javascript">
-      <% if wtailsrc %>
       var filter = function(line) {
+      <% if wtailsrc %>
         <%= wtailsrc %>
         return line;
-      };
       <% end %>
+      };
       <% files.each do |file, port| %>
-      Wtails.run(<%= port %>, filter);
+      Wtails.run('<%= host %>', <%= port %>, filter);
       <% end %>
       $(function() {
         $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});

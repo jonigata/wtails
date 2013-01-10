@@ -39,6 +39,7 @@ module Wtails
         {
           :files    => WebSocket.servers.map { |s| [s.file, s.port] },
           :wtailsrc => settings.wtailsrc,
+          :host     => URI.parse(request.url).host,
         }
       end
 

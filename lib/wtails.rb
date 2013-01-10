@@ -1,3 +1,5 @@
+require 'uri'
+
 require 'rubygems'
 require "eventmachine-tail"
 require 'websocket-eventmachine-server'
