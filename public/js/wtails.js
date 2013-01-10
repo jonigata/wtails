@@ -2,7 +2,8 @@ var Wtails = {
     run: function(host, port, filter) {
         var self = this;
         jQuery(function($) {
-            var socket = new (WebSocket || MozWebSocket)('ws://' + host + ':' + port);
+            var url = 'ws://' + host + ':' + port;
+            var socket = new (WebSocket || MozWebSocket)(url);
             var context = { port: port };
 
             socket.onmessage = function(message) {

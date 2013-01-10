@@ -27,7 +27,7 @@ module Wtails
           @logs.shift if @logs.size > LOG_SIZE
         end
 
-        opts = {:host => "127.0.0.1", :port => port}
+        opts = {:host => "0.0.0.0", :port => port}
         s = ::WebSocket::EventMachine::Server.start(opts) do |socket|
           socket.onopen(&onopen(socket))
           socket.onmessage(&onmessage)
