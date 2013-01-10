@@ -3,9 +3,9 @@ wtails
 
 Wtails is a web server acts like 'tails -f', inspired by webtail( https://github.com/r7kamura/webtail ).
 
-Wtails can handle multiple files.
+You can watch multiple files with slider UI.
 
-Wtails can serve files without launching browser(--serve), this option is usable for browsing remote server.
+Wtails can serve files without launching browser(--serve), this option is usable for watching remote files.
 
 usage
 =====
@@ -24,3 +24,29 @@ single view
 dual (upper/lower) view
 -----------------------
   ![dual view](https://raw.github.com/jonigata/wtails/master/doc/img/dual_view.png)
+
+.wtailsrc
+=========
+
+  Semantics of .wtailsrc is different from webtail. You should modify 'line' local variable.
+
+  example:
+
+```
+$ cat ~/.webtailrc
+var text = line.text();
+
+if (text == '\n') {
+  line.css({
+    margin: '3em 0',
+    height: 1,
+    background: 'lime'
+  });
+}
+
+if (text.match(/require|opt/)) {
+  line.css({
+    color: '#E1017B'
+  });
+}
+```

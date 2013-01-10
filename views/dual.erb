@@ -9,24 +9,14 @@
     <script type="text/javascript" src="/js/lemmon-slider.js"></script>
     <script type="text/javascript" src="/js/tinycon.js"></script>
     <script type="text/javascript" src="/js/wtails.js"></script>
-    <script type="text/javascript">
-      <% if wtailsrc %>
-      Wtails.onmessages.push(function(message, context) {
-        <%= wtailsrc %>
-      });
-      <% end %>
-      <% files.each do |file, port| %>
-      Wtails.run(<%= port %>);
-      <% end %>
-      $(function() {
-        $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});
-      });
-    </script>
+    <%= erb :_init, :locals => { :files => files, :wtailsrc => wtailsrc } %>
     <style>
       .terminal-place {
           width: 240px;
       }
-      .terminal {
+      .terminal-frame {
+        width: 200%;
+        height: 200%;
         transform: scale(0.5);
         -moz-transform: scale(0.5);
         -webkit-transform: scale(0.5);

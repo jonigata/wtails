@@ -1,28 +1,28 @@
 var Wtails = {
-    run: function(port) {
+    run: function(port, filter) {
         var self = this;
         jQuery(function($) {
             var socket = new (WebSocket || MozWebSocket)('ws://localhost:' + port);
             var context = { port: port };
+
             socket.onmessage = function(message) {
-                $.each(self.onmessages, function() { this(message, context); });
+                $('.port-' + context.port).each(function() {
+                    var curr = $(this);
+                    
+                    // To ignore serial empty lines
+                    if (message.data == '\n' && curr.find('pre:last').text() == '\n') return;
+
+                    // apply filter
+                    var line = $('<pre>').text(message.data);
+                    line = filter(line);
+
+                    // Insert a new line
+                    curr.append(line);
+
+                    // Scroll to bottom of the page
+                    curr.parent().scrollTop(curr.height());
+                });
             };
         });
     },
-
-    onmessages: [
-        function(message, context) {
-            // To ignore serial empty lines
-            if (message.data == '\n' && $('pre:last').text() == '\n') return;
-
-            // Insert a new line
-            var target = $('.port-' + context.port);
-            target.append($('<pre>').text(message.data));
-
-            // Scroll to bottom of the page
-            target.each(function() {
-                $(this).parent().scrollTop($(this).height());
-            });
-        }
-    ]
 };
