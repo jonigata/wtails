@@ -2,8 +2,8 @@
       var filter = function(line) {
       <% if wtailsrc %>
         <%= wtailsrc %>
-        return line;
       <% end %>
+        return line;
       };
       <% files.each do |file, port| %>
       Wtails.run('<%= host %>', <%= port %>, filter);
