@@ -3,8 +3,11 @@
 require 'rubygems'
 require 'trollop'
 
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "wtails"
+
 opts = Trollop::options do
-  version "wtails 0.1 (c) 2012 Naoyuki Hirayama"
+  version "wtails #{Wtails::VERSION} (c) 2012 Naoyuki Hirayama"
   banner <<-EOS
 Wtails is a web server acts like 'tail -f'.
 
@@ -20,8 +23,6 @@ end
 
 Trollop::die "need at least one filename" if ARGV.empty?
 
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "wtails"
 begin
   Wtails.run(opts.to_hash, ARGV)
 rescue Errno::ENOENT => e
