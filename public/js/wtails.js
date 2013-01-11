@@ -30,6 +30,12 @@ var Wtails = {
                     curr.parent().scrollTop(curr.height());
                 });
             };
+            $(window).resize(function() {
+                $('.terminal').each(function() {
+                    console.log($(this));
+                    $(this).parent().scrollTop($(this).height());
+                });
+            });
         });
     }
 };
