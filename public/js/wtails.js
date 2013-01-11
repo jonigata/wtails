@@ -20,10 +20,16 @@ var Wtails = {
                     // Insert a new line
                     curr.append(line);
 
+                    // Truncate old lines
+                    var children = curr.children();
+                    if (300 < children.length) {
+                        children.slice(0, children.length - 300).remove();
+                    }
+
                     // Scroll to bottom of the page
                     curr.parent().scrollTop(curr.height());
                 });
             };
         });
-    },
+    }
 };
