@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "eventmachine"
   gem.add_dependency "websocket-eventmachine-server"
   gem.add_dependency "eventmachine-tail"
+  gem.add_dependency "thin"
   gem.add_dependency "sinatra"
   gem.add_dependency "trollop"
   gem.add_dependency "launchy", ">= 2.0.6"
