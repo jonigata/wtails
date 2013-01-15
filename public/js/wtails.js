@@ -32,7 +32,6 @@ var Wtails = {
             };
             $(window).resize(function() {
                 $('.terminal').each(function() {
-                    console.log($(this));
                     $(this).parent().scrollTop($(this).height());
                 });
             });

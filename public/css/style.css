@@ -165,4 +165,6 @@ pre {
 
     word-wrap: break-word;
     white-space: pre-wrap;
+    word-break: break-all;
+    border-bottom: thin dashed #777;
 }
