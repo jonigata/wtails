@@ -116,6 +116,7 @@ header div a {
     height: 100%;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 
 .floating-button {
@@ -128,6 +129,7 @@ header div a {
     text-decoration: none;
     width: 48px;
     height: 48px;
+    pointer-events: auto;
 }
 
 .floating-button > span {
@@ -167,4 +169,13 @@ pre {
     white-space: pre-wrap;
     word-break: break-all;
     border-bottom: thin dashed #777;
+}
+
+.terminal hr {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(200,255,200,0), rgba(200,255,200,0.75), rgba(200,255,200,0));
+    background-image:    -moz-linear-gradient(left, rgba(200,255,200,0), rgba(200,255,200,0.75), rgba(200,255,200,0));
+    background-image:     -ms-linear-gradient(left, rgba(200,255,200,0), rgba(200,255,200,0.75), rgba(200,255,200,0));
+    background-image:      -o-linear-gradient(left, rgba(200,255,200,0), rgba(200,255,200,0.75), rgba(200,255,200,0));
 }

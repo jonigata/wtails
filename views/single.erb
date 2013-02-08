@@ -23,9 +23,16 @@
       </div>
     </header>
     <div class="main-view">
+      <div>
+      </div>
       <div class="pane-full">
         <%= erb :_pane, :locals => { :files => files, :terminal_width => 480 } %>
       </div>
     </div>
   </body>
+  <script>
+    $(function() {
+    $('.foobar').click(function(){ console.log("clicked!"); });
+    });
+  </script>
 </html>

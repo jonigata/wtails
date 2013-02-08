@@ -10,5 +10,8 @@
       <% end %>
       $(function() {
         $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});
+        $('.terminal-frame').click(function() {
+            $(this).find('.terminal').append("<hr/>");
+        });
       });
     </script>
