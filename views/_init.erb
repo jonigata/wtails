@@ -8,10 +8,52 @@
       <% files.each do |file, port| %>
       Wtails.run('<%= host %>', <%= port %>, filter);
       <% end %>
+
+      function doDialog(html) {
+        var dialog = $("#dialog");
+        dialog.html('<div class="dialog-content">'+html+'</div>');
+        dialog.dialog(
+          {
+              modal: true,
+              draggable: false,
+              resizable: false,
+              draggable: false,
+              width: 640,
+              height: 720,
+              show: {
+                  effect: "scale",
+                  duration: 150
+              },
+              overlay: {
+                  opacity: 0.3, background: '#225B7F'
+              },
+              position: {
+                  my: "center",
+                  at: "center",
+                  of: 'body'
+              },
+              buttons: {
+                  "close": function(event) { $(this).dialog('close'); }
+              }
+          });
+        $('.ui-widget-overlay').click(function() {
+          dialog.dialog('close');
+        });
+
+        var dialog_content = $('.dialog-content');
+        dialog_content.parent().scrollTop(dialog_content.height());
+      }
+
       $(function() {
         $('.slider').lemmonSlider({'infinite':false, 'focusCenter': true});
-        $('.terminal-frame').click(function() {
+        $('.slider li').click(function() {
             $(this).find('.terminal').append("<hr/>");
+        });
+        $('.terminal-place').click(function(e) {
+            e.stopPropagation();
+        });
+        $('.terminal-place').dblclick(function(e) {
+            doDialog($(this).find('.terminal').html());
         });
       });
     </script>

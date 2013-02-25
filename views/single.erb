@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Wtails</title>
     <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/jquery-ui-1.10.1.custom.min.css"/>
     <link rel="icon" href="/images/favicon.ico">
     <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.10.1.custom.min.js"></script>
     <script type="text/javascript" src="/js/lemmon-slider.js"></script>
     <script type="text/javascript" src="/js/tinycon.js"></script>
     <script type="text/javascript" src="/js/wtails.js"></script>
     <%= erb :_init, :locals => { :files => files, :wtailsrc => wtailsrc, :host => host } %>
     <style>
       .terminal-place {
-          width: 480px;
+          width: 600px;
       }
     </style>
   </head>
@@ -29,10 +31,8 @@
         <%= erb :_pane, :locals => { :files => files, :terminal_width => 480 } %>
       </div>
     </div>
+    <div id="dialog" style="display: none;">
+      dialog
+    </div>
   </body>
-  <script>
-    $(function() {
-    $('.foobar').click(function(){ console.log("clicked!"); });
-    });
-  </script>
 </html>
