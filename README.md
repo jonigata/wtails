@@ -1,7 +1,7 @@
 wtails
 ======
 
-Wtails is a web server acts like 'tails -f', inspired by webtail( https://github.com/r7kamura/webtail ).
+Wtails is a web server acts like 'tails -f', fork of webtail( https://github.com/r7kamura/webtail ).
 
 You can watch multiple files with slider UI.
 
